@@ -10,6 +10,7 @@ import util from './modules/utils/util'
 import constant from './modules/utils/constant'
 import vue3DayjsPlugin from 'vue3-dayjs-plugin'
 import BootstrapVueNext  from 'bootstrap-vue-next'
+import LoadScript from "vue-plugin-load-script";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
@@ -23,5 +24,6 @@ app.use(util)
 app.use(constant)
 app.use(vue3DayjsPlugin)
 app.use(BootstrapVueNext)
+app.use(LoadScript)
 
 app.mount('#app')

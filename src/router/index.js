@@ -6,6 +6,7 @@ import AxiosTest from '../views/sample/AxiosTest.vue'
 import UtilTest from '../views/sample/UtilTest.vue'
 import AmChartTest from '../views/sample/AmChartTest.vue'
 import BootstrapTest from '../views/sample/BootstrapTest.vue'
+import SmapTest from '../views/sample/SmapTest.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -59,6 +60,14 @@ const router = createRouter({
       component: BootstrapTest,
       meta: {
         name: 'Bootstrap Test'
+      }
+    },
+    {
+      path: '/test5',
+      name: 'test5',      
+      component: SmapTest,
+      meta: {
+        name: 'S-Map Test'
       }
     }
   ]
