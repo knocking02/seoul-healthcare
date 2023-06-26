@@ -51,7 +51,7 @@ const onReset = (event) => {
 
 <template>
     <div>
-        <h4>Bootstrap TEST</h4>
+        <h4>Bootstrap Sample TEST</h4>
         <br>
             <div>
                 <b-table striped="striped" hover="hover" :items="items"></b-table>

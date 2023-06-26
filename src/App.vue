@@ -13,8 +13,8 @@ import Footer from "./components/layout/footer/Footer.vue";
             <div class="row">
                 <Nav></Nav>
                 <!-- /.col-lg-3 -->
-                <div class="col-lg-9 my-4 mb-4">
-                    <router-view></router-view>
+                <div class="col-lg-9 my-4 mb-4">                    
+                    <router-view></router-view>                   
                 </div>
                 <!-- /.col-lg-9 -->
             </div>

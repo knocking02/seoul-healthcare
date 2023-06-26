@@ -5,7 +5,9 @@ import About from '../views/about/About.vue'
 import AxiosTest from '../views/sample/AxiosTest.vue'
 import UtilTest from '../views/sample/UtilTest.vue'
 import AmChartTest from '../views/sample/AmChartTest.vue'
+import BootstrapMain from '../views/sample/BootstrapMain.vue'
 import BootstrapTest from '../views/sample/BootstrapTest.vue'
+import BootstrapTableTest from '../views/sample/BootstrapTableTest.vue'
 import SmapTest from '../views/sample/SmapTest.vue'
 
 const router = createRouter({
@@ -56,11 +58,25 @@ const router = createRouter({
     },
     {
       path: '/test4',
-      name: 'test4',      
-      component: BootstrapTest,
-      meta: {
-        name: 'Bootstrap Test'
-      }
+      name: 'test4',    
+      component: BootstrapMain,
+      children: [{
+        path: '/test4/sample',
+        name: 'test4-sample',      
+        component: BootstrapTest,
+        meta: {
+          name: 'Bootstrap Sample Test'
+        },
+
+      },{
+        path: '/test4/table',
+        name: 'test4-table',      
+        component: BootstrapTableTest,
+        meta: {
+          name: 'Bootstrap Table Test'
+        },
+
+      }]
     },
     {
       path: '/test5',
@@ -72,6 +88,8 @@ const router = createRouter({
     }
   ]
 })
+
+console.log(router)
 
 router.beforeEach((to, from, next) => {
   // console.log('to', to)

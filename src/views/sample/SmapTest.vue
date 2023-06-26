@@ -60,11 +60,11 @@ const onMapChange = (mapType) => BaseMapChange(map, L.Dawul[mapType])
 
 
 /** 좌표 정보로 거리 계산 및 정보 저장 */
-const setSelectedPoints = (latlng) => {
+const setSelectedPoints = ({lat, lng}) => {
 	let distance = 0
 	if(selectedPoints.value.length > 0) {
 		let selectedPoint = selectedPoints.value[selectedPoints.value.length-1]
-		distance = getDistance([selectedPoint.lat,selectedPoint.lng], [latlng.lat, latlng.lng])
+		distance = getDistance([selectedPoint.lat,selectedPoint.lng], [lat, lng])
 		totalDistant.value += distance
 	}else {
 		totalDistant.value = 0
@@ -72,16 +72,16 @@ const setSelectedPoints = (latlng) => {
 	}
 
 	selectedPoints.value.push({
-		lat: latlng.lat,
-		lng: latlng.lng,
+		lat: lat,
+		lng: lng,
 		dst: distance
 	})	
 }
 
 /** Marker 생성 */
-const createMarker = (latlng) => {	
+const createMarker = ({lat, lng}) => {	
 	
-	let marker = new L.Marker(new L.LatLng(latlng.lat, latlng.lng),{
+	let marker = new L.Marker(new L.LatLng(lat, lng),{
 			icon: new L.Icon({      	
 				iconUrl: '/images/icons/pin_2.png',
     		iconAnchor: [11,30],  // 오프셋 (핀의 끝이 좌표로 매칭하기 위해 적용)
@@ -229,8 +229,7 @@ onUnmounted(() => {
 		<h4>S-Map Test</h4>
 		<b-button @click="onMapChange('BASEMAP_GEN')" class="m-md-1">일반지도</b-button>
 		<b-button @click="onMapChange('BASEMAP_SATE')" class="m-md-1">항공지도</b-button>
-		<b-button @click="onClearMarker" class="m-md-1">Marker 삭제</b-button>
-		<b-button @click="alert('준비중')" class="m-md-1">Polyline 정보 저장</b-button>
+		<b-button @click="onClearMarker" class="m-md-1">Marker 삭제</b-button>		
 		<div style="display:flex;padding-top:5px">
 			<div id="map_" style="width:1000px;height:700px"></div>
 			<div style="padding-left:15px">
