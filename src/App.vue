@@ -3,6 +3,9 @@ import { RouterView } from 'vue-router'
 import Header from "./components/layout/header/Header.vue";
 import Nav from "./components/layout/nav/Nav.vue";
 import Footer from "./components/layout/footer/Footer.vue";
+import MessageModal from './components/modal/MessageModal.vue'
+
+
 </script>
 
 <template>
@@ -14,7 +17,8 @@ import Footer from "./components/layout/footer/Footer.vue";
                 <Nav></Nav>
                 <!-- /.col-lg-3 -->
                 <div class="col-lg-9 my-4 mb-4">                    
-                    <router-view></router-view>                   
+                    <router-view></router-view>                        
+                    <MessageModal></MessageModal>
                 </div>
                 <!-- /.col-lg-9 -->
             </div>

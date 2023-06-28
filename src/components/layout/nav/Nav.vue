@@ -13,6 +13,7 @@
                 <ul>
                     <li><router-link to="/test4/sample">Sample</router-link></li>
                     <li><router-link to="/test4/table">Table</router-link></li>
+                    <li><router-link to="/test4/message">Message Modal</router-link></li>
                 </ul>
                 
             </div>        

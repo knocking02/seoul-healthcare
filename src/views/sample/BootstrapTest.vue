@@ -1,5 +1,5 @@
 <script setup>
-import { nextTick, reactive, ref } from "vue";
+import { nextTick, reactive, ref, onMounted } from "vue";
 
 // Table
 const items = ref(null)
@@ -45,7 +45,11 @@ const onReset = (event) => {
     show.value = true
   })
   
+
+
 }
+
+
 
 </script>
 
@@ -57,8 +61,8 @@ const onReset = (event) => {
                 <b-table striped="striped" hover="hover" :items="items"></b-table>
             </div>
             <div>
-                <b-button @click="modalShow = !modalShow">Open Modal</b-button>
-                <b-modal v-model="modalShow" title="Modal Test">Hello From Modal!</b-modal>
+                <b-button @click="modalShow = !modalShow" class="m-md-2">Open Modal</b-button>                
+                <b-modal ref='bModal' v-model="modalShow" ok-title="Ok">Hello From My Modal!</b-modal>
 
                 <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
                     <b-dropdown-item>First Action</b-dropdown-item>
@@ -125,7 +129,7 @@ const onReset = (event) => {
                 <b-card class="mt-3" header="Form Data Result">
                     <pre class="m-0">{{ form }}</pre>
                 </b-card>
-            </div>
+            </div>            
         </div>
     </template>
 

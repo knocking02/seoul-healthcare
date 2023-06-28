@@ -8,6 +8,7 @@ import AmChartTest from '../views/sample/AmChartTest.vue'
 import BootstrapMain from '../views/sample/BootstrapMain.vue'
 import BootstrapTest from '../views/sample/BootstrapTest.vue'
 import BootstrapTableTest from '../views/sample/BootstrapTableTest.vue'
+import BootstrapMessageTest from '../views/sample/BootstrapMessageTest.vue'
 import SmapTest from '../views/sample/SmapTest.vue'
 
 const router = createRouter({
@@ -76,6 +77,14 @@ const router = createRouter({
           name: 'Bootstrap Table Test'
         },
 
+      },{
+        path: '/test4/message',
+        name: 'test4-message',      
+        component: BootstrapMessageTest,
+        meta: {
+          name: 'Bootstrap Modal Message Test'
+        },
+
       }]
     },
     {
@@ -88,8 +97,6 @@ const router = createRouter({
     }
   ]
 })
-
-console.log(router)
 
 router.beforeEach((to, from, next) => {
   // console.log('to', to)
