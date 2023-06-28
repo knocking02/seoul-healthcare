@@ -1,11 +1,19 @@
 <script setup>
+import { onMounted } from 'vue'
 import { RouterView } from 'vue-router'
 import Header from "./components/layout/header/Header.vue";
 import Nav from "./components/layout/nav/Nav.vue";
 import Footer from "./components/layout/footer/Footer.vue";
 import MessageModal from './components/modal/MessageModal.vue'
+import { useMessageModalStore } from './stores/messageModal'
 
 
+const messageModalStore = useMessageModalStore()
+onMounted(() => {    
+    window.onpopstate = () => {
+        messageModalStore.close()
+    }
+})
 </script>
 
 <template>
