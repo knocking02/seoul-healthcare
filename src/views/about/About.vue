@@ -1,13 +1,10 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-    <div>
-        <h1>This is an About page</h1>        
-    </div>
+  <div>
+    <h1>This is an About page</h1>
+    <div>Develop</div>
+  </div>
 </template>
 
-<style>
-
-</style>
+<style></style>
