@@ -5,6 +5,7 @@
     <h1>This is an About page</h1>
     <div>junghun</div>
     <div>Develop2</div>
+    <div>junghun2</div>
   </div>
 </template>
 
