@@ -33,5 +33,4 @@ export interface PostPayload extends PostFormValues {
 
 export interface kim {
   junghun: string;
-  age: number;
 }
